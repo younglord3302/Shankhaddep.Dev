@@ -71,8 +71,8 @@ export default function TechRibbon({
       <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-accent-violet/30 to-transparent" />
       
       {/* Side Blurs for smooth entry/exit */}
-      <div className="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-white dark:from-dark-950 to-transparent z-10" />
-      <div className="absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-white dark:from-dark-950 to-transparent z-10" />
+      <div className="absolute inset-y-0 left-0 w-12 md:w-32 bg-gradient-to-r from-white dark:from-dark-950 to-transparent z-10" />
+      <div className="absolute inset-y-0 right-0 w-12 md:w-32 bg-gradient-to-l from-white dark:from-dark-950 to-transparent z-10" />
     </div>
   );
 }

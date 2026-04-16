@@ -91,9 +91,9 @@ export default function HomePage() {
             <motion.h1 
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
-              className="text-5xl md:text-7xl font-black mb-6 leading-[1.1] tracking-tighter text-dark-900 dark:text-white"
+              className="text-4xl sm:text-5xl md:text-7xl font-black mb-6 leading-[1.1] tracking-tighter text-dark-900 dark:text-white"
             >
-              Crafting Digital <br />
+              Crafting Digital <br className="hidden sm:block" />
               <span className="gradient-text">Experiences</span> with Code
             </motion.h1>
 
@@ -133,22 +133,21 @@ export default function HomePage() {
           <p className="text-center text-sm font-bold text-dark-500 dark:text-dark-500 mb-8 uppercase tracking-widest">
             Technologies I work with daily
           </p>
-          <div className="flex flex-wrap justify-center gap-8 md:gap-12">
+          <div className="flex flex-wrap justify-center gap-4 sm:gap-6 md:gap-12">
             <TechBadge delay={0.4}>React.js</TechBadge>
             <TechBadge delay={0.45}>Node.js</TechBadge>
-            <TechBadge delay={0.5}>JavaScript</TechBadge>
+            <TechBadge delay={0.5}>JS</TechBadge>
             <TechBadge delay={0.55}>MongoDB</TechBadge>
-            <TechBadge delay={0.6}>Express.js</TechBadge>
-            <TechBadge delay={0.65}>Docker</TechBadge>
-            <TechBadge delay={0.7}>Google Cloud</TechBadge>
-            <TechBadge delay={0.75}>Generative AI</TechBadge>
+            <TechBadge delay={0.6}>Docker</TechBadge>
+            <TechBadge delay={0.65}>GCP</TechBadge>
+            <TechBadge delay={0.7}>Gen-AI</TechBadge>
           </div>
         </div>
       </section>
 
       <section className="section bg-transparent pt-0 relative z-10">
         <div className="container-custom">
-          <div className="flex flex-col items-center justify-center mb-16 h-[400px] md:h-[500px] relative">
+          <div className="flex flex-col items-center justify-center mb-16 h-[300px] sm:h-[400px] md:h-[500px] relative">
             <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
               whileInView={{ opacity: 1, scale: 1 }}

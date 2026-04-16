@@ -59,12 +59,14 @@ export default function TechScene() {
   }
 
   return (
-    <div className="w-full h-full min-h-[500px]">
+    <div className="w-full h-full min-h-[300px] md:min-h-[500px]">
       <Canvas 
         shadows 
         dpr={[1, 1.5]} 
+        className="touch-action-pan-y"
+        style={{ touchAction: 'pan-y' }}
         gl={{ 
-          antialias: false, // Disabling antialias for performance boost
+          antialias: false,
           powerPreference: "high-performance",
           alpha: true,
           preserveDrawingBuffer: false,
@@ -79,7 +81,7 @@ export default function TechScene() {
           penumbra={1} 
           intensity={1.5} 
           castShadow 
-          shadow-mapSize={[512, 512]} // Lower shadow map resolution
+          shadow-mapSize={[512, 512]}
         />
         <directionalLight position={[-10, 10, 5]} intensity={0.5} />
 
@@ -103,15 +105,15 @@ export default function TechScene() {
             scale={20} 
             blur={2.5} 
             far={4} 
-            resolution={256} // Lower resolution for contact shadows
+            resolution={256}
           />
         </Suspense>
 
         <OrbitControls 
           autoRotate 
           autoRotateSpeed={0.5}
-          enableZoom={true} 
-          enablePan={false} // Disable panning for smoother interaction
+          enableZoom={false} // Disabled globally to prioritize page scroll
+          enablePan={false}
           minPolarAngle={Math.PI / 4} 
           maxPolarAngle={Math.PI / 2.1} 
           minDistance={5}

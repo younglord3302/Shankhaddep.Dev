@@ -23,7 +23,7 @@ export default function BrandingLogo({ className = "", showText = true }: Brandi
       </svg>
       
       {showText && (
-        <span className="text-xl font-black text-green-500 tracking-tighter neon-text-green uppercase italic">
+        <span className="text-lg sm:text-xl font-black text-green-500 tracking-tighter neon-text-green uppercase italic">
           Shankhadeep.Dev
         </span>
       )}

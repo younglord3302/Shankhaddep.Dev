@@ -88,7 +88,7 @@ export default function Navbar() {
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           exit={{ opacity: 0, scale: 0.95 }}
-          className="md:hidden mt-4 glass rounded-[2rem] p-6 shadow-2xl"
+          className="md:hidden mt-4 glass rounded-[2rem] p-6 shadow-2xl max-h-[70vh] overflow-y-auto"
         >
           <div className="flex flex-col gap-3">
             {NAVIGATION.map((item) => (
