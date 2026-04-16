@@ -18,14 +18,6 @@ import { useEffect, useState, Suspense, lazy } from "react";
 import dynamic from "next/dynamic";
 
 const TechRibbon = dynamic(() => import("@/components/TechRibbon"), { ssr: false });
-const TechScene = dynamic(() => import("@/components/TechScene"), { 
-  ssr: false,
-  loading: () => (
-    <div className="w-full h-full flex items-center justify-center bg-dark-900/5 dark:bg-dark-900/20 rounded-3xl">
-      <div className="w-10 h-10 border-4 border-primary-500/20 border-t-primary-500 rounded-full animate-spin" />
-    </div>
-  )
-});
 
 export default function HomePage() {
 
@@ -145,24 +137,69 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Interactive Visual (Replaced 3D with 2D for Performance) */}
       <section className="section bg-transparent pt-0 relative z-10">
         <div className="container-custom">
-          <div className="flex flex-col items-center justify-center mb-16 h-[300px] sm:h-[400px] md:h-[500px] relative">
+          <div className="flex flex-col items-center justify-center mb-16 relative">
             <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
-              className="w-full h-full"
+              className="w-full max-w-5xl p-8 rounded-[2.5rem] glass border border-primary-500/10 shadow-2xl overflow-hidden relative group"
             >
-              <div className="w-full h-full rounded-3xl overflow-hidden glass border border-primary-500/10 shadow-2xl">
-                <Suspense fallback={
-                  <div className="w-full h-full flex items-center justify-center">
-                    <div className="w-10 h-10 border-4 border-primary-500 border-t-transparent rounded-full animate-spin" />
+              {/* Abstract Background for the replacement */}
+              <div className="absolute inset-0 -z-10 bg-gradient-to-br from-primary-500/5 to-accent-violet/5 opacity-50" />
+              <div className="absolute top-0 right-0 w-64 h-64 bg-primary-500/10 blur-[80px] -translate-y-1/2 translate-x-1/2" />
+              
+              <div className="flex flex-col md:flex-row items-center gap-12">
+                <div className="flex-1 space-y-6">
+                  <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary-500/10 text-primary-600 dark:text-primary-400 text-xs font-bold uppercase tracking-wider">
+                    Full Stack Excellence
                   </div>
-                }>
-                  <TechScene />
-                </Suspense>
+                  <h2 className="text-3xl md:text-4xl font-black tracking-tight leading-tight">
+                    Building the <span className="gradient-text">Future</span> of Web Apps
+                  </h2>
+                  <p className="text-dark-600 dark:text-dark-400 leading-relaxed font-medium">
+                    I architect high-performance systems using the <strong>MERN</strong> stack, 
+                    optimized for speed, security, and scalability. From fluid 3D interfaces 
+                    to robust backend pipelines, every line of code is written with precision.
+                  </p>
+                  <div className="flex flex-wrap gap-4 pt-4">
+                    <div className="flex items-center gap-3">
+                      <div className="w-1.5 h-10 bg-primary-500 rounded-full" />
+                      <div>
+                        <p className="text-xl font-bold">99%</p>
+                        <p className="text-[10px] uppercase font-bold text-dark-500">Performance</p>
+                      </div>
+                    </div>
+                    <div className="w-px h-10 bg-dark-200 dark:bg-dark-800 mx-2" />
+                    <div className="flex items-center gap-3">
+                      <div className="w-1.5 h-10 bg-green-500 rounded-full" />
+                      <div>
+                        <p className="text-xl font-bold">Zero</p>
+                        <p className="text-[10px] uppercase font-bold text-dark-500">Downtime</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                <div className="flex-1 w-full flex justify-center">
+                  <div className="relative w-48 h-48 md:w-64 md:h-64 flex items-center justify-center">
+                    <motion.div 
+                      animate={{ rotate: 360 }}
+                      transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+                      className="absolute inset-0 border-2 border-dashed border-primary-500/20 rounded-full"
+                    />
+                    <motion.div 
+                      animate={{ rotate: -360 }}
+                      transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
+                      className="absolute inset-8 border border-primary-500/40 rounded-full"
+                    />
+                    <div className="relative z-10 p-6 bg-white dark:bg-dark-900 rounded-[2rem] shadow-xl border border-primary-500/20">
+                      <FiCode className="w-16 h-16 md:w-20 md:h-20 text-primary-500 animate-pulse-slow" />
+                    </div>
+                  </div>
+                </div>
               </div>
             </motion.div>
           </div>
