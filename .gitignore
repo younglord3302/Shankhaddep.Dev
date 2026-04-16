@@ -16,11 +16,8 @@
 # misc
 .DS_Store
 *.pem
-
-# debug
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
+*.tsbuildinfo
+next-env.d.ts
 
 # local env files
 .env*.local
@@ -31,19 +28,47 @@ yarn-error.log*
 
 # typescript
 *.tsbuildinfo
-next-env.d.ts
 
-# Qwen
-.qwen/
+# Project specific ignores
 prd.md
+MIGRATION_REPORT.md
+find-api-url.js
+setup_rls.sql
+test_insert.js
+/skills
+skills-lock.json
 
-# InsForge & AI agent skills
-.insforge
-.agent
-.agents
-.augment
-.claude
-.cline
+# IDEs
+.vscode/
+.idea/
+
+# AI Agents & Tools (Exhaustive List)
+.agents/
+.augment/
+.claude/
+.codebuddy/
+.commandcode/
+.continue/
+.crush/
+.factory/
+.goose/
+.insforge/
+.junie/
+.kilocode/
+.kiro/
+.kode/
+.mcpjam/
+.mux/
+.neovate/
+.openhands/
+.pi/
+.pochi/
+.qoder/
+.qwen/
+.roo/
+.trae/
+.windsurf/
+.zencoder/
 .github/copilot*
 .kilocode
 .qoder
